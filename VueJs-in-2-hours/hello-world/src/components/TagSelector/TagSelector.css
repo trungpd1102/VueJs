@@ -1,0 +1,13 @@
+.list div {
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.langSelected {
+  background-color: dodgerblue;
+  color: white;
+}
