@@ -1,0 +1,1 @@
+Chú ý khi sử dụng this trong VueJs, tránh nhầm this với nhau
