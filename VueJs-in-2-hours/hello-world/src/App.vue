@@ -54,10 +54,19 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('http://fonts.cdnfonts.com/css/japanese');
+
+@font-face {
+	font-family: 'NotoSansJP';
+	src: url('/font/NotoSansJP-Regular-Alphabetic.ttf') format('truetype');
+}
+
 body {
 	width: 100%;
 	height: 100%;
-	font-family: ' Noto Sans JP ', sans-serif;
+	font-family: 'NotoSansJP';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;

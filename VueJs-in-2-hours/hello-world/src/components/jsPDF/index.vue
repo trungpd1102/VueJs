@@ -2,7 +2,7 @@
 	<div class="jspdf-main">
 		<div class="content template-area" id="capture">
 			<div class="template-header template-children__margin">
-				<h1>下記の通りお見積もり申し上げます。</h1>
+				<h1>お見積もり書</h1>
 				<hr />
 				<div class="header-table">
 					<div class="h-table__left">
@@ -136,10 +136,10 @@
 </template>
 <script>
 import jsPDF from 'jspdf';
-// import YomogiRegularFont from '@/font/Yomogi-Regular-normal.js';
+import '@/font/Yomogi-Regular-normal.js';
 import '@/font/Japanese-normal.js';
-import '@/font/NotoSansJP-Medium-normal.js';
 import '@/font/NotoSansJP-Regular-normal.js';
+import '@/font/YuGothM-normal.js';
 // import html2canvas from 'html2canvas';
 export default {
 	data() {
@@ -158,7 +158,7 @@ export default {
 			// console.log(fontList);
 			// doc.addFileToVFS('@/font/Japanese.ttf', Japanese);
 			// doc.addFont('@/font/Japanese.ttf', 'Japanese', 'normal');
-			doc.setFont('NotoSansJP-Regular'); // set font
+			doc.setFont('Yomogi-Regular', 'normal'); // set font
 			// let listFont = doc.getFontList();
 			// console.log(listFont);
 			// doc.html(document.body, {
@@ -178,7 +178,7 @@ export default {
 			// 	// 	},
 			// 	// ],
 			// });
-			doc.text('<html>お見積もり書</html>', 10, 10);
+			doc.text('お見積もり書', 10, 10);
 			doc.save();
 		},
 	},
