@@ -60,13 +60,14 @@ export default {
 
 @font-face {
 	font-family: 'NotoSansJP';
-	src: url('/font/NotoSansJP-Regular-Alphabetic.ttf') format('truetype');
+	src: url('./font/NotoSansJP-Regular-Alphabetic.ttf')
+		format('truetype');
 }
 
 body {
 	width: 100%;
 	height: 100%;
-	font-family: 'NotoSansJP';
+	font-family: Japanese;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;

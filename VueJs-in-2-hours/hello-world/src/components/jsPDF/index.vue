@@ -138,7 +138,7 @@
 import jsPDF from 'jspdf';
 import '@/font/Yomogi-Regular-normal.js';
 import '@/font/Japanese-normal.js';
-import '@/font/NotoSansJP-Regular-normal.js';
+import '@/font/NotoSansJP-Regular-Alphabetic-normal.js';
 import '@/font/YuGothM-normal.js';
 // import html2canvas from 'html2canvas';
 export default {
@@ -148,38 +148,17 @@ export default {
 	methods: {
 		createPDF() {
 			let doc = new jsPDF('p', 'pt', 'a4');
-			// doc.addFileToVFS("MyFont.ttf", myFont);
-			// doc.addFont(
-			// 	'./../../asserts/Yomogi-Regular.ttf',
-			// 	'Yomogi',
-			// 	'normal'
-			// );
-			// var fontList = doc.getFontList();
-			// console.log(fontList);
-			// doc.addFileToVFS('@/font/Japanese.ttf', Japanese);
-			// doc.addFont('@/font/Japanese.ttf', 'Japanese', 'normal');
-			doc.setFont('Yomogi-Regular', 'normal'); // set font
-			// let listFont = doc.getFontList();
-			// console.log(listFont);
-			// doc.html(document.body, {
-			// 	callback: function(pdf) {
-			// 		pdf.save('template.pdf');
-			// 	},
-			// 	html2canvas: {
-			// 		scale: 0.67,
-			// 	},
-			// 	// fontFaces: [
-			// 	// 	{
-			// 	// 		family: "'M PLUS Rounded 1c', sans-serif",
-			// 	// 		style: 'normal',
-			// 	// 		src: [
-			// 	// 			'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap',
-			// 	// 		],
-			// 	// 	},
-			// 	// ],
-			// });
-			doc.text('お見積もり書', 10, 10);
-			doc.save();
+			doc.setFont('Japanese', 'normal'); // set font
+			doc.html(document.body, {
+				callback: function(pdf) {
+					pdf.save('template.pdf');
+				},
+				html2canvas: {
+					scale: 0.65,
+				},
+			});
+			// doc.text('お見積もり書', 10, 100);
+			// doc.save();
 		},
 	},
 };
