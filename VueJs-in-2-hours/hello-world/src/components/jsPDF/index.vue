@@ -2,7 +2,7 @@
 	<div class="jspdf-main">
 		<div class="content template-area" id="capture">
 			<div class="template-header template-children__margin">
-				<h1>お見積もり書+様</h1>
+				<h1>下記の通りお見積もり申し上げます。</h1>
 				<hr />
 				<div class="header-table">
 					<div class="h-table__left">
@@ -19,7 +19,7 @@
 									"
 									colspan="2"
 								>
-									<p>取引先名+様</p>
+									<p>取引先名様</p>
 								</td>
 							</tr>
 							<tr>
@@ -31,7 +31,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td>案件名：</td>
+								<td>案件名</td>
 								<td class="text-align__left border__bottom">
 									ロゴデータ作成
 								</td>
@@ -48,7 +48,7 @@
 					<div class="h-table__right">
 						<table>
 							<tr>
-								<td>発行日:</td>
+								<td>発行日</td>
 								<td class="text-align__right" colspan="3">
 									2021-07-31
 								</td>
@@ -129,125 +129,60 @@
 			</div>
 			<div class="template-footer template-children__margin"></div>
 		</div>
+		<!-- <div id="capture">お見積もり書</div> -->
+
 		<button @click="createPDF" type="button">Create pdf</button>
 	</div>
 </template>
-
 <script>
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+// import YomogiRegularFont from '@/font/Yomogi-Regular-normal.js';
+import '@/font/Japanese-normal.js';
+import '@/font/NotoSansJP-Medium-normal.js';
+import '@/font/NotoSansJP-Regular-normal.js';
+// import html2canvas from 'html2canvas';
 export default {
+	data() {
+		return {};
+	},
 	methods: {
 		createPDF() {
-			// html2canvas(document.querySelector('#capture'), {
-			// 	allowTaint: true,
-			// 	useCORS: true,
-			// 	scale: 1,
-			// }).then((canvas) => {
-			// 	document.body.appendChild(canvas);
-			// 	let doc = new jspdf();
-			// 	let img = canvas.toDataURL('image/png');
-			// 	doc.setFont('Arial');
-			// 	doc.getFontSize(11);
-			// 	doc.addImage(img, 'PNG', 7, 13, 195, 105);
-			// 	doc.save();
+			let doc = new jsPDF('p', 'pt', 'a4');
+			// doc.addFileToVFS("MyFont.ttf", myFont);
+			// doc.addFont(
+			// 	'./../../asserts/Yomogi-Regular.ttf',
+			// 	'Yomogi',
+			// 	'normal'
+			// );
+			// var fontList = doc.getFontList();
+			// console.log(fontList);
+			// doc.addFileToVFS('@/font/Japanese.ttf', Japanese);
+			// doc.addFont('@/font/Japanese.ttf', 'Japanese', 'normal');
+			doc.setFont('NotoSansJP-Regular'); // set font
+			// let listFont = doc.getFontList();
+			// console.log(listFont);
+			// doc.html(document.body, {
+			// 	callback: function(pdf) {
+			// 		pdf.save('template.pdf');
+			// 	},
+			// 	html2canvas: {
+			// 		scale: 0.67,
+			// 	},
+			// 	// fontFaces: [
+			// 	// 	{
+			// 	// 		family: "'M PLUS Rounded 1c', sans-serif",
+			// 	// 		style: 'normal',
+			// 	// 		src: [
+			// 	// 			'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap',
+			// 	// 		],
+			// 	// 	},
+			// 	// ],
 			// });
-
-			window.html2canvas = html2canvas;
-			var doc = new jsPDF(1, 'pt', 'a4');
-			// doc.setFont(fontOptions);
-			// doc.getFontSize(110);
-			doc.html(document.querySelector('#capture'), {
-				callback: function(pdf) {
-					pdf.save('template.pdf');
-				},
-			});
+			doc.text('<html>お見積もり書</html>', 10, 10);
+			doc.save();
 		},
 	},
 };
 </script>
 
-<style>
-table,
-tr,
-td {
-	border-collapse: collapse;
-}
-
-table {
-	width: 100%;
-}
-
-td {
-	height: 15px;
-}
-
-hr {
-	height: 2px;
-	border-width: 0;
-	color: black;
-	background-color: black;
-}
-
-img {
-	width: 80%;
-}
-
-td.border__bottom {
-	border-bottom: 1px solid black;
-}
-
-.template-area {
-	height: 130vh;
-	width: 800px;
-	border: 2px solid black;
-	padding: 3vh 3vw;
-	position: relative;
-}
-
-.template-children__margin {
-	margin: 2vh 0;
-}
-
-.header-table {
-	display: grid;
-	grid-template-columns: 55% 45%;
-}
-
-.h-table__right {
-	margin-left: 4vw;
-}
-
-.text-align__right {
-	text-align: right;
-}
-
-.text-align__left {
-	text-align: left;
-}
-
-.font-size__large {
-	font-size: 1.5em;
-}
-
-.h-table__right td {
-	width: 20%;
-}
-
-.header-seal {
-	position: absolute;
-	right: 1vw;
-	top: 27vh;
-}
-
-.body-table td,
-th {
-	border: 1px solid black;
-	width: 7.1%;
-	height: 25px;
-}
-
-.hide-row td {
-	border: none;
-}
-</style>
+<style src="./index.css" type="text/css"></style>

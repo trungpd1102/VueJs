@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+@import '../modules/noto-sans-mono-japanese';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+
+/*
+ * Definitions of var(--jp-monospace)
+ */
+
+ :root {
+  --font-apple-mono:  Monaco, Osaka-Mono;
+  --font-google-mono: 'Roboto Mono', 'Noto Sans Mono Japanese';
+  --font-ms-mono:     'ＭＳ　ゴシック', 'MS Gothic';
+  --jp-monospace:     var(--font-apple-mono),
+                      var(--font-google-mono),
+                      monospace;
+}

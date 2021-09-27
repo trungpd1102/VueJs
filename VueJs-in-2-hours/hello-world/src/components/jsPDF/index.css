@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('http://fonts.cdnfonts.com/css/japanese');
+table,
+tr,
+td {
+	border-collapse: collapse;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	height: 15px;
+}
+
+hr {
+	height: 2px;
+	border-width: 0;
+	color: black;
+	background-color: black;
+}
+
+img {
+	width: 80%;
+}
+
+td.border__bottom {
+	border-bottom: 1px solid black;
+}
+
+.template-area {
+	height: 130vh;
+	width: 800px;
+	/* height: 800px;
+	width: 530px; */
+	/* border: 2px solid black; */
+	padding: 3vh 3vw;
+	position: relative;
+}
+
+.template-children__margin {
+	margin: 4vh 0;
+}
+
+.header-table {
+	display: grid;
+	grid-template-columns: 55% 45%;
+}
+
+.h-table__right {
+	margin-left: 4vw;
+}
+
+.text-align__right {
+	text-align: right;
+}
+
+.text-align__left {
+	text-align: left;
+}
+
+.font-size__large {
+	font-size: 1.5em;
+}
+
+.h-table__right td {
+	width: 20%;
+}
+
+.header-seal {
+	position: absolute;
+	right: 1vw;
+	top: 25vh;
+	width: 12%;
+	height: 12%;
+}
+
+.body-table td,
+th {
+	border: 1px solid black;
+	width: 7.1%;
+	height: 25px;
+}
+
+.hide-row td {
+	border: none;
+}
