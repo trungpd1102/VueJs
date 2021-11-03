@@ -136,10 +136,12 @@
 </template>
 <script>
 import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import '@/font/Yomogi-Regular-normal.js';
 import '@/font/Japanese-normal.js';
-import '@/font/NotoSansJP-Regular-Alphabetic-normal.js';
-import '@/font/YuGothM-normal.js';
+import '@/font/NotoSansJP-Regular-normal.js';
+// import '@/font/NotoSansJP-Regular-Alphabetic-normal.js';
+// import '@/font/YuGothM-normal.js';
 // import html2canvas from 'html2canvas';
 export default {
 	data() {
@@ -148,17 +150,38 @@ export default {
 	methods: {
 		createPDF() {
 			let doc = new jsPDF('p', 'pt', 'a4');
-			doc.setFont('Japanese', 'normal'); // set font
-			doc.html(document.body, {
-				callback: function(pdf) {
-					pdf.save('template.pdf');
-				},
-				html2canvas: {
-					scale: 0.65,
-				},
-			});
-			// doc.text('お見積もり書', 10, 100);
-			// doc.save();
+
+			doc.setFont('NotoSansJP-Regular'); // set font
+			// let listFont = doc.getFontList();
+			// console.log(listFont);
+			// doc.html(document.body, {
+			// 	callback: function(pdf) {
+			// 		pdf.save('template.pdf');
+			// 	},
+			// 	html2canvas: {
+			// 		scale: 0.65,
+			// 	},
+			// 	// fontFaces: [
+			// 	// 	{
+			// 	// 		family: 'NotoSansJP',
+			// 	// 		style: 'normal',
+			// 	// 		src: ['@/font/NotoSansJP-Regular-Alphabetic-normal.ttf'],
+			// 	// 	},
+			// 	// ],
+			// });
+			// doc.autoTable({
+			// 	columnStyles: { europe: { halign: 'center' } }, // European countries centered
+			// 	body: [
+			// 		{ europe: 'Sweden', america: 'Canada', asia: 'China' },
+			// 		{ europe: 'Norway', america: 'Mexico', asia: 'Japan' },
+			// 	],
+			// 	columns: [
+			// 		{ header: 'Europe', dataKey: 'europe' },
+			// 		{ header: 'Asia', dataKey: 'asia' },
+			// 	],
+			// });
+			doc.text('お見積もり書', 10, 10);
+			doc.save();
 		},
 	},
 };
